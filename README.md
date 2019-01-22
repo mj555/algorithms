@@ -112,27 +112,30 @@ plt.imshow(image)
 
 This is what a blood cell image looks like. Here, the blue part represents the WBCs, and the slightly red parts represent the RBCs. Let’s look at how many images, and the different type of classes, there are in our training set.
 
-# Number of unique training images
-train['image_names'].nunique()
+Number of unique training images:
 
-So, we have 254 training images.
+  train['image_names'].nunique()
 
-# Number of classes
-train['cell_type'].value_counts()
+So, we have 254 training images
+
+Number of classes:
+  train['cell_type'].value_counts()
 
 We have three different classes of cells, i.e., RBC, WBC and Platelets. Finally, let’s look at how an image with detected objects will look like:
 
-fig = plt.figure()
+  fig = plt.figure()
 
-#add axes to the image
-ax = fig.add_axes([0,0,1,1])
+add axes to the image:
 
-# read and plot the image
-image = plt.imread('images/1.jpg')
-plt.imshow(image)
+  ax = fig.add_axes([0,0,1,1])
 
-# iterating over the image for different objects
-for _,row in train[train.image_names == "1.jpg"].iterrows():
+read and plot the image:
+
+  image = plt.imread('images/1.jpg')
+   plt.imshow(image)
+
+iterating over the image for different objects:
+  for _,row in train[train.image_names == "1.jpg"].iterrows():
     xmin = row.xmin
     xmax = row.xmax
     ymin = row.ymin
