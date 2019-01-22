@@ -108,12 +108,15 @@ Let’s now print an image to visualize what we’re working with:
 image = plt.imread('images/1.jpg')
 plt.imshow(image)
 
-![](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/10/Screenshot-from-2018-10-29-18-32-43.png(https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/10/Screenshot-from-2018-10-29-18-32-43.png)
+![](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/10/Screenshot-from-2018-10-29-18-32-43.png)
 
 This is what a blood cell image looks like. Here, the blue part represents the WBCs, and the slightly red parts represent the RBCs. Let’s look at how many images, and the different type of classes, there are in our training set.
 
 # Number of unique training images
 train['image_names'].nunique()
+
+So, we have 254 training images.
+
 # Number of classes
 train['cell_type'].value_counts()
 
