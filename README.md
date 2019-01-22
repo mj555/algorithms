@@ -104,3 +104,60 @@ There are 6 columns in the train file. Let’s understand what each column repre
 
 Let’s now print an image to visualize what we’re working with:
 
+# reading single image using imread function of matplotlib
+image = plt.imread('images/1.jpg')
+plt.imshow(image)
+
+![](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/10/Screenshot-from-2018-10-29-18-32-43.png(https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/10/Screenshot-from-2018-10-29-18-32-43.png)
+
+This is what a blood cell image looks like. Here, the blue part represents the WBCs, and the slightly red parts represent the RBCs. Let’s look at how many images, and the different type of classes, there are in our training set.
+
+# Number of unique training images
+train['image_names'].nunique()
+# Number of classes
+train['cell_type'].value_counts()
+
+We have three different classes of cells, i.e., RBC, WBC and Platelets. Finally, let’s look at how an image with detected objects will look like:
+
+fig = plt.figure()
+
+#add axes to the image
+ax = fig.add_axes([0,0,1,1])
+
+# read and plot the image
+image = plt.imread('images/1.jpg')
+plt.imshow(image)
+
+# iterating over the image for different objects
+for _,row in train[train.image_names == "1.jpg"].iterrows():
+    xmin = row.xmin
+    xmax = row.xmax
+    ymin = row.ymin
+    ymax = row.ymax
+    
+    width = xmax - xmin
+    height = ymax - ymin
+    
+    # assign different color to different classes of objects
+    if row.cell_type == 'RBC':
+        edgecolor = 'r'
+        ax.annotate('RBC', xy=(xmax-40,ymin+20))
+    elif row.cell_type == 'WBC':
+        edgecolor = 'b'
+        ax.annotate('WBC', xy=(xmax-40,ymin+20))
+    elif row.cell_type == 'Platelets':
+        edgecolor = 'g'
+        ax.annotate('Platelets', xy=(xmax-40,ymin+20))
+        
+    # add bounding boxes to the image
+    rect = patches.Rectangle((xmin,ymin), width, height, edgecolor = edgecolor, facecolor = 'none')
+    
+    ax.add_patch(rect)
+    
+![](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/10/Screenshot-from-2018-10-31-18-00-50.png)
+    
+This is what a training example looks like. We have the different classes and their corresponding bounding boxes. Let’s now train our model on these images. We will be using the keras_frcnn library to train our model as well as to get predictions on the test images.
+
+#Implementing Faster R-CNN
+
+tbr
