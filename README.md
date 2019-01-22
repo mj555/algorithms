@@ -55,7 +55,7 @@ The reason for choosing this dataset is that the density of RBCs, WBCs and Plate
 
 Manually looking at the sample via a microscope is a tedious process. And this is where Deep Learning models play such a vital role. They can classify and detect the blood cells from microscopic images with impressive precision.
 
-The full blood cell detection dataset for our challenge can be downloaded from here. I have modified the data a tiny bit for the scope of this article:
+The full blood cell detection dataset for our challenge can be downloaded [from here](https://github.com/Shenggan/BCCD_Dataset). I have modified the data a tiny bit for the scope of this article:
 
     The bounding boxes have been converted from the given .xml format to a .csv format
     I have also created the training and test set split on the entire dataset by randomly picking images for the split
