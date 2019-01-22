@@ -135,11 +135,12 @@ read and plot the image:
    plt.imshow(image)
 
 iterating over the image for different objects:
-  for _,row in train[train.image_names == "1.jpg"].iterrows():
-    xmin = row.xmin
-    xmax = row.xmax
-    ymin = row.ymin
-    ymax = row.ymax
+
+    for _,row in train[train.image_names == "1.jpg"].iterrows():
+      xmin = row.xmin
+      xmax = row.xmax
+      ymin = row.ymin
+      ymax = row.ymax
     
     width = xmax - xmin
     height = ymax - ymin
