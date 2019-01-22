@@ -103,10 +103,10 @@ There are 6 columns in the train file. Let’s understand what each column repre
     ymax: y-coordinate of the top right part of the image
 
 Let’s now print an image to visualize what we’re working with:
-
-# reading single image using imread function of matplotlib
-image = plt.imread('images/1.jpg')
-plt.imshow(image)
+    
+     image = plt.imread('images/1.jpg')
+     plt.imshow(image)
+     #reading single image using imread function of matplotlib
 
 ![](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/10/Screenshot-from-2018-10-29-18-32-43.png)
 
@@ -114,25 +114,25 @@ This is what a blood cell image looks like. Here, the blue part represents the W
 
 Number of unique training images:
 
-  train['image_names'].nunique()
-
-So, we have 254 training images
+    train['image_names'].nunique()
+    #So, we have 254 training images
 
 Number of classes:
-  train['cell_type'].value_counts()
+    
+    train['cell_type'].value_counts()
 
 We have three different classes of cells, i.e., RBC, WBC and Platelets. Finally, let’s look at how an image with detected objects will look like:
 
-  fig = plt.figure()
+     fig = plt.figure()
 
 add axes to the image:
 
-  ax = fig.add_axes([0,0,1,1])
+     ax = fig.add_axes([0,0,1,1])
 
 read and plot the image:
 
-  image = plt.imread('images/1.jpg')
-   plt.imshow(image)
+    image = plt.imread('images/1.jpg')
+    plt.imshow(image)
 
 iterating over the image for different objects:
 
