@@ -29,6 +29,7 @@ Faster R-CNN fixes the problem of selective search by replacing it with Region P
 I have summarized below the steps followed by a Faster R-CNN algorithm to detect objects in an image:
 
 * Take an input image and pass it to the ConvNet which returns feature maps for the image
+
 * Apply Region Proposal Network (RPN) on these feature maps and get object proposals
 * Apply ROI pooling layer to bring down all the proposals to the same size
 * Finally, pass these proposals to a fully connected layer in order to classify any predict the bounding boxes for   the image
@@ -82,4 +83,24 @@ pip install -r requirement.txt
 Alright, our system is now set and we can move on to working with the data!
 
 
+# Data Exploration
+
+It’s always a good idea (and frankly, a mandatory step) to first explore the data we have. This helps us not only unearth hidden patterns, but gain a valuable overall insight into what we are working with. The three files I have created out of the entire dataset are:
+
+ train_images: Images that we will be using to train the model. We have the classes and the actual bounding boxes for each class in this folder.
+ test_images: Images in this folder will be used to make predictions using the trained model. This set is missing the classes and the bounding boxes for these classes.
+ train.csv: Contains the name, class and bounding box coordinates for each image. There can be multiple rows for one image as a single image can have more than one object.
+
+Let’s read the .csv file (you can create your own .csv file from the original dataset if you feel like experimenting) and print out the first few rows. We’ll need to first import the below libraries for this:
+
+There are 6 columns in the train file. Let’s understand what each column represents:
+
+    image_names: contains the name of the image
+    cell_type: denotes the type of the cell
+    xmin: x-coordinate of the bottom left part of the image
+    xmax: x-coordinate of the top right part of the image
+    ymin: y-coordinate of the bottom left part of the image
+    ymax: y-coordinate of the top right part of the image
+
+Let’s now print an image to visualize what we’re working with:
 
