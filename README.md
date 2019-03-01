@@ -1,4 +1,4 @@
-Machine Learning for Human Space Exploration
+Machine Learning for Space Exploration
 
 NASA’s space exploration and other missions generate large, heterogeneous datasets that
 represent mission operations and science. NASA invests significant resources in collecting and
