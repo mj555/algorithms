@@ -24,7 +24,7 @@ within and across science and operations data with the goal of jointly optimizin
 and operational efficiency, reliability, and safety.
 2. Machine Learning and Data Mining algorithms that reveal how they arrive at their
 decisions/insights in a human-interpretable form.
-This session will explore work that has been done and is to be done along these lines and others
+This github will explore work that has been done and is to be done along these lines and others
 to apply machine learning to human space exploration.
 
 ![](https://github.com/mj555/modules/blob/master/output_GLK8jZ(1).gif)
