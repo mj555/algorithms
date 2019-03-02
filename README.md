@@ -1,5 +1,3 @@
-Machine Learning for Space Exploration
-
 NASA’s space exploration and other missions generate large, heterogeneous datasets that
 represent mission operations and science. NASA invests significant resources in collecting and
 storing these data. NASA’s substantial mission operations and science data are only valuable
