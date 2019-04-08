@@ -25,5 +25,6 @@ decisions/insights in a human-interpretable form.
 This github will explore work that has been done and is to be done along these lines and others
 to apply machine learning to human space exploration.
 
+Images: NASA/JPL/University of Arizona 
+
 ![](https://github.com/mj555/modules/blob/master/output_GLK8jZ(1).gif)
-Image: NASA/JPL/University of Arizona 
